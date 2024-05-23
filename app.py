@@ -3,6 +3,8 @@ import dash_bootstrap_components as dbc
 from app_instance import app
 from components import geo, gender, time, view, sports, age, relation
 
+server = app.server
+
 # Define the app layout
 app.layout = dbc.Container([
     dcc.Store(id='store'),
