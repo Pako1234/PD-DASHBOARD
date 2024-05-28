@@ -8,11 +8,17 @@ server = app.server
 # Define the app layout
 app.layout = dbc.Container([
     dcc.Store(id='store'),
-    html.H1('OLYMPIC VIEWERSHIP DASHBOARD'),
+    dbc.Row(
+        [
+            dbc.Col(html.Img(src='/assets/logo.jpg', height='100px'), width='auto'),
+            dbc.Col(html.H1('OLYMPIC VIEWERSHIP DASHBOARD'), width='auto', style={'display': 'flex', 'align-items': 'center'}),
+        ],
+        align='center',
+    ), 
     html.Hr(),
     dbc.Tabs(
         [
-            dbc.Tab(label='GEOGRAPHICAL ANALYSIS', tab_id='tab1', children=geo.layout),
+            dbc.Tab(label='GEO ANALYSIS', tab_id='tab1', children=geo.layout),
             dbc.Tab(label='TIME ANALYSIS', tab_id='tab2', children=time.layout),
             dbc.Tab(label='GENDER DISTRIBUTION', tab_id='tab3', children=gender.layout),
             dbc.Tab(label='SPORT POPULARITY', tab_id='tab4', children=sports.layout),
